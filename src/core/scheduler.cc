@@ -10,7 +10,7 @@ namespace runtime{
             return Status(StatusCode::kInvalidArgument, "Context is null");
         }
         if (context_!= nullptr){
-            return Status(StatusCode::kFailedPrecondition, "Scheduler has already been initialized");
+            return Status(StatusCode::kFailedPrecondition, "Scheduler::Init() called more than once");
         }
         context_ = context;
         return Status::Ok();

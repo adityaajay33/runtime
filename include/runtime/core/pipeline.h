@@ -1,0 +1,33 @@
+#ifndef RUNTIME_CORE_PIPELINE_H_
+#define RUNTIME_CORE_PIPELINE_H_
+
+#include "runtime/core/status.h"
+#include "runtime/core/scheduler.h"
+#include "runtime/components/component_interface.h"
+
+namespace runtime {
+
+    class Pipeline {
+        public:
+            Pipeline() = default;
+            virtual ~Pipeline() = default;
+
+            Pipeline(const Pipeline&) = delete;
+            Pipeline& operator=(const Pipeline&) = delete;
+
+            Status Build(RuntimeContext* context);
+            Status RegisterComponents(Scheduler* scheduler);
+
+        protected:
+            
+            virtual Status DoBuild(RuntimeContext* context) = 0;
+
+            Status AddComponent(ComponentInterface* component);
+
+        private:
+            bool built_;
+            std::vector<ComponentInterface*> components_;
+    };
+} // namespace runtime
+
+#endif // RUNTIME_CORE_PIPELINE_H_
