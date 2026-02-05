@@ -7,9 +7,7 @@ Scheduler::Scheduler()
     : context_(nullptr), 
       components_(), 
       running_(false), 
-      tick_(0),
-      timer_(nullptr),
-      timer_mode_(false) {}
+      tick_(0) {}
 
 Scheduler::~Scheduler() {
     Stop();
@@ -67,8 +65,6 @@ Status Scheduler::Start() {
 }
 
 void Scheduler::Stop() {
-    StopTimerMode();
-    
     if (!running_) {
         return;
     }
@@ -105,36 +101,6 @@ void Scheduler::RunLoop(int num_ticks) {
             DoTick();
         }
     }
-}
-
-Status Scheduler::StartTimerMode(rclcpp::Node* node, int hz) {
-    if (!running_) {
-        return Status(StatusCode::kFailedPrecondition, 
-                      "Scheduler must be started before enabling timer mode");
-    }
-    if (timer_mode_) {
-        return Status(StatusCode::kFailedPrecondition, "Timer mode already active");
-    }
-    if (node == nullptr) {
-        return Status(StatusCode::kInvalidArgument, "Node is null");
-    }
-    if (hz <= 0) {
-        return Status(StatusCode::kInvalidArgument, "Hz must be positive");
-    }
-    
-    auto period = std::chrono::milliseconds(1000 / hz);
-    timer_ = node->create_wall_timer(period, [this]() { DoTick(); });
-    timer_mode_ = true;
-    
-    return Status::Ok();
-}
-
-void Scheduler::StopTimerMode() {
-    if (timer_) {
-        timer_->cancel();
-        timer_.reset();
-    }
-    timer_mode_ = false;
 }
 
 } //namespace ptk::core

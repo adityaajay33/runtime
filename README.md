@@ -6,7 +6,7 @@ A high-performance, zero-copy perception pipeline framework for edge devices and
 
 - **Zero-copy data pipeline** using TensorView/BufferView for efficient memory usage
 - **Hybrid ROS 2 integration** with composable nodes and optional topic bridges
-- **Custom scheduler** with both manual loop and ROS timer-based execution
+- **Custom scheduler** with manual loop execution
 - **Multiple inference backends** supporting ONNX Runtime and TensorRT
 - **Image preprocessing operators** including resize, normalize, crop, color conversion
 - **Camera abstraction** with support for real cameras (Mac/Linux) and synthetic sources
@@ -184,9 +184,6 @@ scheduler.Start();
 
 //run with manual loop
 scheduler.RunLoop(100);
-
-//or run with ros timer (30 fps)
-scheduler.StartTimerMode(node, 30);
 ```
 
 ### Using Component Loader
