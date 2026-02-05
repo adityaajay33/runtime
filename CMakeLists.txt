@@ -4,36 +4,44 @@ project(ptk CXX)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-# Enable intra-process communication for zero-copy
+#enable intra-process communication for zero-copy
 add_definitions(-DRCLCPP_INTRA_PROCESS_COMMS_ENABLED)
 
-# Find ROS 2 packages
+#find ros2 packages
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(rclcpp_components REQUIRED)
+find_package(sensor_msgs REQUIRED)
+find_package(std_msgs REQUIRED)
+find_package(rosidl_default_generators REQUIRED)
 
-# Point OpenCV to Conda installation if available
+#point opencv to conda installation if available
 if(DEFINED ENV{CONDA_PREFIX})
     set(OpenCV_DIR "$ENV{CONDA_PREFIX}/lib/cmake/opencv4")
 endif()
 
 find_package(OpenCV REQUIRED)
 
-# Find ONNX Runtime (optional for inference)
-find_package(onnxruntime QUIET)
-if(onnxruntime_FOUND)
-    message(STATUS "ONNX Runtime found, enabling inference support")
+#find onnx runtime (required)
+find_path(ONNXRUNTIME_INCLUDE_DIR NAMES onnxruntime_cxx_api.h PATH_SUFFIXES onnxruntime core/session)
+find_library(ONNXRUNTIME_LIBRARY NAMES onnxruntime)
+
+if(ONNXRUNTIME_INCLUDE_DIR AND ONNXRUNTIME_LIBRARY)
+    message(STATUS "Found ONNX Runtime: ${ONNXRUNTIME_LIBRARY}")
+    message(STATUS "Found ONNX Runtime headers: ${ONNXRUNTIME_INCLUDE_DIR}")
     add_definitions(-DPTK_ENABLE_ONNX)
 else()
-    message(STATUS "ONNX Runtime not found, inference will be limited")
+    message(FATAL_ERROR "ONNX Runtime not found! Please install it.")
 endif()
 
 include_directories(
     ${PROJECT_SOURCE_DIR}/include
+    ${PROJECT_SOURCE_DIR}/stb
     ${OpenCV_INCLUDE_DIRS}
+    ${ONNXRUNTIME_INCLUDE_DIR}
 )
 
-# Check for CUDA (optional)
+#check for cuda (optional)
 find_package(CUDA QUIET)
 if(CUDA_FOUND)
     message(STATUS "CUDA found, enabling GPU support")
@@ -43,7 +51,15 @@ else()
     message(STATUS "CUDA not found, building CPU-only version")
 endif()
 
-# Build PTK library
+#generate ros messages
+rosidl_generate_interfaces(${PROJECT_NAME}
+    "msg/Frame.msg"
+    "msg/Detection.msg"
+    "msg/DetectionArray.msg"
+    DEPENDENCIES std_msgs
+)
+
+#build ptk library
 file(GLOB PTK_SOURCES
     ${PROJECT_SOURCE_DIR}/src/sensors/*.cc
     ${PROJECT_SOURCE_DIR}/src/runtime/core/*.cc
@@ -53,7 +69,7 @@ file(GLOB PTK_SOURCES
     ${PROJECT_SOURCE_DIR}/src/tasks/*.cc
 )
 
-# Add memory sources only if CUDA is available
+#add memory sources only if cuda is available
 if(CUDA_FOUND)
     file(GLOB PTK_MEMORY_SOURCES ${PROJECT_SOURCE_DIR}/src/runtime/memory/*.cc)
     list(APPEND PTK_SOURCES ${PTK_MEMORY_SOURCES})
@@ -63,15 +79,21 @@ add_library(ptk SHARED ${PTK_SOURCES})
 ament_target_dependencies(ptk
     rclcpp
     rclcpp_components
+    sensor_msgs
+    std_msgs
 )
-target_link_libraries(ptk ${OpenCV_LIBS})
+target_link_libraries(ptk ${OpenCV_LIBS} ${ONNXRUNTIME_LIBRARY})
 
-# Link CUDA libraries if available
+#link cuda libraries if available
 if(CUDA_FOUND)
     target_link_libraries(ptk ${CUDA_LIBRARIES})
 endif()
 
-# Register components for composable nodes
+#link generated messages to library
+rosidl_get_typesupport_target(cpp_typesupport_target ${PROJECT_NAME} "rosidl_typesupport_cpp")
+target_link_libraries(ptk "${cpp_typesupport_target}")
+
+#register components for composable nodes
 rclcpp_components_register_node(ptk
     PLUGIN "ptk::components::Counter"
     EXECUTABLE counter_node
@@ -107,7 +129,17 @@ rclcpp_components_register_node(ptk
     EXECUTABLE inference_node
 )
 
-# Build test apps
+rclcpp_components_register_node(ptk
+    PLUGIN "ptk::components::FramePublisherBridge"
+    EXECUTABLE frame_publisher_bridge_node
+)
+
+rclcpp_components_register_node(ptk
+    PLUGIN "ptk::components::FrameSubscriberBridge"
+    EXECUTABLE frame_subscriber_bridge_node
+)
+
+#build test apps
 add_executable(test_camera src/apps/test_camera.cc)
 target_link_libraries(test_camera ptk ${OpenCV_LIBS})
 ament_target_dependencies(test_camera rclcpp)
@@ -124,19 +156,33 @@ add_executable(test_inference src/apps/test_inference.cc)
 target_link_libraries(test_inference ptk ${OpenCV_LIBS})
 ament_target_dependencies(test_inference rclcpp)
 
-# Install
+add_executable(run_model src/apps/run_model.cc)
+target_link_libraries(run_model ptk ${OpenCV_LIBS})
+ament_target_dependencies(run_model rclcpp)
+
+#install targets
 install(TARGETS ptk
     ARCHIVE DESTINATION lib
     LIBRARY DESTINATION lib
     RUNTIME DESTINATION bin
 )
 
-install(TARGETS test_camera test_pipeline test_pipeline_synthetic test_inference
+install(TARGETS 
+    test_camera 
+    test_pipeline 
+    test_pipeline_synthetic 
+    test_inference
+    run_model
     DESTINATION lib/${PROJECT_NAME}
 )
 
 install(DIRECTORY include/
     DESTINATION include
+)
+
+#install launch files
+install(DIRECTORY launch/
+    DESTINATION share/${PROJECT_NAME}/launch
 )
 
 ament_package()
