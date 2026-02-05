@@ -155,7 +155,6 @@ int main(int argc, char** argv) {
     std::signal(SIGINT, SignalHandler);
     std::signal(SIGTERM, SignalHandler);
     
-    //initialize ros
     rclcpp::init(argc, argv);
     
     std::cout << "=== PTK Model Runner ===" << std::endl;
@@ -166,7 +165,6 @@ int main(int argc, char** argv) {
     std::cout << "FPS: " << fps << std::endl;
     std::cout << std::endl;
     
-    //create runtime context
     core::RuntimeContextOptions ctx_opts;
     ctx_opts.info_stream = stdout;
     ctx_opts.error_stream = stderr;
@@ -269,7 +267,6 @@ int main(int argc, char** argv) {
         return 1;
     }
     
-    //start components
     preprocessor->Start();
     inference->Start();
     logger->Start();
@@ -293,7 +290,7 @@ int main(int argc, char** argv) {
         
         frame_count++;
         
-        //maintain framerate
+
         auto elapsed = std::chrono::steady_clock::now() - start;
         auto sleep_time = frame_interval - elapsed;
         if (sleep_time > std::chrono::milliseconds(0)) {
@@ -304,7 +301,7 @@ int main(int argc, char** argv) {
     std::cout << std::endl;
     std::cout << "shutting down..." << std::endl;
     
-    //stop components
+
     logger->Stop();
     inference->Stop();
     preprocessor->Stop();
