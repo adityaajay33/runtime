@@ -1,4 +1,0 @@
-/Users/adityaajay/Desktop/ptk/build/CMakeFiles/ptk_core.dir
-/Users/adityaajay/Desktop/ptk/build/CMakeFiles/ptk_fake_detection.dir
-/Users/adityaajay/Desktop/ptk/build/CMakeFiles/edit_cache.dir
-/Users/adityaajay/Desktop/ptk/build/CMakeFiles/rebuild_cache.dir
