@@ -30,7 +30,7 @@ target_compile_options(ptk_core
 
 target_link_libraries(ptk_core
     PUBLIC
-        yaml-cpp
+        yaml-cpp::yaml-cpp
 )
 
 add_executable(ptk_fake_detection
