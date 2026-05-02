@@ -166,6 +166,30 @@ apps/ptk_fake_detection.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ptk_fake_detection.dir/build.make CMakeFiles/ptk_fake_detection.dir/apps/ptk_fake_detection.cc.s
 .PHONY : apps/ptk_fake_detection.cc.s
 
+src/core/config.o: src/core/config.cc.o
+.PHONY : src/core/config.o
+
+# target to build an object file
+src/core/config.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ptk_core.dir/build.make CMakeFiles/ptk_core.dir/src/core/config.cc.o
+.PHONY : src/core/config.cc.o
+
+src/core/config.i: src/core/config.cc.i
+.PHONY : src/core/config.i
+
+# target to preprocess a source file
+src/core/config.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ptk_core.dir/build.make CMakeFiles/ptk_core.dir/src/core/config.cc.i
+.PHONY : src/core/config.cc.i
+
+src/core/config.s: src/core/config.cc.s
+.PHONY : src/core/config.s
+
+# target to generate assembly for a file
+src/core/config.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ptk_core.dir/build.make CMakeFiles/ptk_core.dir/src/core/config.cc.s
+.PHONY : src/core/config.cc.s
+
 src/models/fake_model_engine.o: src/models/fake_model_engine.cc.o
 .PHONY : src/models/fake_model_engine.o
 
@@ -299,6 +323,9 @@ help:
 	@echo "... apps/ptk_fake_detection.o"
 	@echo "... apps/ptk_fake_detection.i"
 	@echo "... apps/ptk_fake_detection.s"
+	@echo "... src/core/config.o"
+	@echo "... src/core/config.i"
+	@echo "... src/core/config.s"
 	@echo "... src/models/fake_model_engine.o"
 	@echo "... src/models/fake_model_engine.i"
 	@echo "... src/models/fake_model_engine.s"

@@ -1,6 +1,7 @@
 {
     "files.associations": {
         ".fantomasignore": "ignore",
-        "cstddef": "cpp"
+        "cstddef": "cpp",
+        "stdexcept": "cpp"
     }
 }

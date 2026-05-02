@@ -5,7 +5,10 @@ project(ptk LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+find_package(yaml-cpp REQUIRED)
+
 add_library(ptk_core
+    src/core/config.cc
     src/pipeline/synthetic_frame_input.cc
     src/pipeline/console_target.cc
     src/pipeline/detection_decoder.cc
@@ -23,6 +26,11 @@ target_compile_options(ptk_core
         -Wall
         -Wextra
         -Wpedantic
+)
+
+target_link_libraries(ptk_core
+    PUBLIC
+        yaml-cpp
 )
 
 add_executable(ptk_fake_detection

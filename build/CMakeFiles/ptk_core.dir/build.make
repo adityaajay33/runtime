@@ -72,10 +72,24 @@ include CMakeFiles/ptk_core.dir/flags.make
 CMakeFiles/ptk_core.dir/codegen:
 .PHONY : CMakeFiles/ptk_core.dir/codegen
 
+CMakeFiles/ptk_core.dir/src/core/config.cc.o: CMakeFiles/ptk_core.dir/flags.make
+CMakeFiles/ptk_core.dir/src/core/config.cc.o: /Users/adityaajay/Desktop/ptk/src/core/config.cc
+CMakeFiles/ptk_core.dir/src/core/config.cc.o: CMakeFiles/ptk_core.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/adityaajay/Desktop/ptk/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/ptk_core.dir/src/core/config.cc.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ptk_core.dir/src/core/config.cc.o -MF CMakeFiles/ptk_core.dir/src/core/config.cc.o.d -o CMakeFiles/ptk_core.dir/src/core/config.cc.o -c /Users/adityaajay/Desktop/ptk/src/core/config.cc
+
+CMakeFiles/ptk_core.dir/src/core/config.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ptk_core.dir/src/core/config.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/adityaajay/Desktop/ptk/src/core/config.cc > CMakeFiles/ptk_core.dir/src/core/config.cc.i
+
+CMakeFiles/ptk_core.dir/src/core/config.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ptk_core.dir/src/core/config.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/adityaajay/Desktop/ptk/src/core/config.cc -o CMakeFiles/ptk_core.dir/src/core/config.cc.s
+
 CMakeFiles/ptk_core.dir/src/pipeline/synthetic_frame_input.cc.o: CMakeFiles/ptk_core.dir/flags.make
 CMakeFiles/ptk_core.dir/src/pipeline/synthetic_frame_input.cc.o: /Users/adityaajay/Desktop/ptk/src/pipeline/synthetic_frame_input.cc
 CMakeFiles/ptk_core.dir/src/pipeline/synthetic_frame_input.cc.o: CMakeFiles/ptk_core.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/adityaajay/Desktop/ptk/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/ptk_core.dir/src/pipeline/synthetic_frame_input.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/adityaajay/Desktop/ptk/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/ptk_core.dir/src/pipeline/synthetic_frame_input.cc.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ptk_core.dir/src/pipeline/synthetic_frame_input.cc.o -MF CMakeFiles/ptk_core.dir/src/pipeline/synthetic_frame_input.cc.o.d -o CMakeFiles/ptk_core.dir/src/pipeline/synthetic_frame_input.cc.o -c /Users/adityaajay/Desktop/ptk/src/pipeline/synthetic_frame_input.cc
 
 CMakeFiles/ptk_core.dir/src/pipeline/synthetic_frame_input.cc.i: cmake_force
@@ -89,7 +103,7 @@ CMakeFiles/ptk_core.dir/src/pipeline/synthetic_frame_input.cc.s: cmake_force
 CMakeFiles/ptk_core.dir/src/pipeline/console_target.cc.o: CMakeFiles/ptk_core.dir/flags.make
 CMakeFiles/ptk_core.dir/src/pipeline/console_target.cc.o: /Users/adityaajay/Desktop/ptk/src/pipeline/console_target.cc
 CMakeFiles/ptk_core.dir/src/pipeline/console_target.cc.o: CMakeFiles/ptk_core.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/adityaajay/Desktop/ptk/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/ptk_core.dir/src/pipeline/console_target.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/adityaajay/Desktop/ptk/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/ptk_core.dir/src/pipeline/console_target.cc.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ptk_core.dir/src/pipeline/console_target.cc.o -MF CMakeFiles/ptk_core.dir/src/pipeline/console_target.cc.o.d -o CMakeFiles/ptk_core.dir/src/pipeline/console_target.cc.o -c /Users/adityaajay/Desktop/ptk/src/pipeline/console_target.cc
 
 CMakeFiles/ptk_core.dir/src/pipeline/console_target.cc.i: cmake_force
@@ -103,7 +117,7 @@ CMakeFiles/ptk_core.dir/src/pipeline/console_target.cc.s: cmake_force
 CMakeFiles/ptk_core.dir/src/pipeline/detection_decoder.cc.o: CMakeFiles/ptk_core.dir/flags.make
 CMakeFiles/ptk_core.dir/src/pipeline/detection_decoder.cc.o: /Users/adityaajay/Desktop/ptk/src/pipeline/detection_decoder.cc
 CMakeFiles/ptk_core.dir/src/pipeline/detection_decoder.cc.o: CMakeFiles/ptk_core.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/adityaajay/Desktop/ptk/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/ptk_core.dir/src/pipeline/detection_decoder.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/adityaajay/Desktop/ptk/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/ptk_core.dir/src/pipeline/detection_decoder.cc.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ptk_core.dir/src/pipeline/detection_decoder.cc.o -MF CMakeFiles/ptk_core.dir/src/pipeline/detection_decoder.cc.o.d -o CMakeFiles/ptk_core.dir/src/pipeline/detection_decoder.cc.o -c /Users/adityaajay/Desktop/ptk/src/pipeline/detection_decoder.cc
 
 CMakeFiles/ptk_core.dir/src/pipeline/detection_decoder.cc.i: cmake_force
@@ -117,7 +131,7 @@ CMakeFiles/ptk_core.dir/src/pipeline/detection_decoder.cc.s: cmake_force
 CMakeFiles/ptk_core.dir/src/pipeline/perception_pipeline.cc.o: CMakeFiles/ptk_core.dir/flags.make
 CMakeFiles/ptk_core.dir/src/pipeline/perception_pipeline.cc.o: /Users/adityaajay/Desktop/ptk/src/pipeline/perception_pipeline.cc
 CMakeFiles/ptk_core.dir/src/pipeline/perception_pipeline.cc.o: CMakeFiles/ptk_core.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/adityaajay/Desktop/ptk/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/ptk_core.dir/src/pipeline/perception_pipeline.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/adityaajay/Desktop/ptk/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/ptk_core.dir/src/pipeline/perception_pipeline.cc.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ptk_core.dir/src/pipeline/perception_pipeline.cc.o -MF CMakeFiles/ptk_core.dir/src/pipeline/perception_pipeline.cc.o.d -o CMakeFiles/ptk_core.dir/src/pipeline/perception_pipeline.cc.o -c /Users/adityaajay/Desktop/ptk/src/pipeline/perception_pipeline.cc
 
 CMakeFiles/ptk_core.dir/src/pipeline/perception_pipeline.cc.i: cmake_force
@@ -131,7 +145,7 @@ CMakeFiles/ptk_core.dir/src/pipeline/perception_pipeline.cc.s: cmake_force
 CMakeFiles/ptk_core.dir/src/models/fake_model_engine.cc.o: CMakeFiles/ptk_core.dir/flags.make
 CMakeFiles/ptk_core.dir/src/models/fake_model_engine.cc.o: /Users/adityaajay/Desktop/ptk/src/models/fake_model_engine.cc
 CMakeFiles/ptk_core.dir/src/models/fake_model_engine.cc.o: CMakeFiles/ptk_core.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/adityaajay/Desktop/ptk/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/ptk_core.dir/src/models/fake_model_engine.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/adityaajay/Desktop/ptk/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/ptk_core.dir/src/models/fake_model_engine.cc.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ptk_core.dir/src/models/fake_model_engine.cc.o -MF CMakeFiles/ptk_core.dir/src/models/fake_model_engine.cc.o.d -o CMakeFiles/ptk_core.dir/src/models/fake_model_engine.cc.o -c /Users/adityaajay/Desktop/ptk/src/models/fake_model_engine.cc
 
 CMakeFiles/ptk_core.dir/src/models/fake_model_engine.cc.i: cmake_force
@@ -144,6 +158,7 @@ CMakeFiles/ptk_core.dir/src/models/fake_model_engine.cc.s: cmake_force
 
 # Object files for target ptk_core
 ptk_core_OBJECTS = \
+"CMakeFiles/ptk_core.dir/src/core/config.cc.o" \
 "CMakeFiles/ptk_core.dir/src/pipeline/synthetic_frame_input.cc.o" \
 "CMakeFiles/ptk_core.dir/src/pipeline/console_target.cc.o" \
 "CMakeFiles/ptk_core.dir/src/pipeline/detection_decoder.cc.o" \
@@ -153,6 +168,7 @@ ptk_core_OBJECTS = \
 # External object files for target ptk_core
 ptk_core_EXTERNAL_OBJECTS =
 
+libptk_core.a: CMakeFiles/ptk_core.dir/src/core/config.cc.o
 libptk_core.a: CMakeFiles/ptk_core.dir/src/pipeline/synthetic_frame_input.cc.o
 libptk_core.a: CMakeFiles/ptk_core.dir/src/pipeline/console_target.cc.o
 libptk_core.a: CMakeFiles/ptk_core.dir/src/pipeline/detection_decoder.cc.o
@@ -160,7 +176,7 @@ libptk_core.a: CMakeFiles/ptk_core.dir/src/pipeline/perception_pipeline.cc.o
 libptk_core.a: CMakeFiles/ptk_core.dir/src/models/fake_model_engine.cc.o
 libptk_core.a: CMakeFiles/ptk_core.dir/build.make
 libptk_core.a: CMakeFiles/ptk_core.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/adityaajay/Desktop/ptk/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX static library libptk_core.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/adityaajay/Desktop/ptk/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX static library libptk_core.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/ptk_core.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ptk_core.dir/link.txt --verbose=$(VERBOSE)
 

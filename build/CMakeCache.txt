@@ -207,6 +207,9 @@ ptk_IS_TOP_LEVEL:STATIC=ON
 //Value Computed by CMake
 ptk_SOURCE_DIR:STATIC=/Users/adityaajay/Desktop/ptk
 
+//The directory containing a CMake configuration file for yaml-cpp.
+yaml-cpp_DIR:PATH=/opt/homebrew/lib/cmake/yaml-cpp
+
 
 ########################
 # INTERNAL cache entries

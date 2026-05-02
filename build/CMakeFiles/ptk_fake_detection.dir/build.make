@@ -96,6 +96,7 @@ ptk_fake_detection_EXTERNAL_OBJECTS =
 ptk_fake_detection: CMakeFiles/ptk_fake_detection.dir/apps/ptk_fake_detection.cc.o
 ptk_fake_detection: CMakeFiles/ptk_fake_detection.dir/build.make
 ptk_fake_detection: libptk_core.a
+ptk_fake_detection: /opt/homebrew/lib/libyaml-cpp.0.9.0.dylib
 ptk_fake_detection: CMakeFiles/ptk_fake_detection.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/adityaajay/Desktop/ptk/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable ptk_fake_detection"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ptk_fake_detection.dir/link.txt --verbose=$(VERBOSE)

@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/Users/adityaajay/Desktop/ptk/src/core/config.cc" "CMakeFiles/ptk_core.dir/src/core/config.cc.o" "gcc" "CMakeFiles/ptk_core.dir/src/core/config.cc.o.d"
   "/Users/adityaajay/Desktop/ptk/src/models/fake_model_engine.cc" "CMakeFiles/ptk_core.dir/src/models/fake_model_engine.cc.o" "gcc" "CMakeFiles/ptk_core.dir/src/models/fake_model_engine.cc.o.d"
   "/Users/adityaajay/Desktop/ptk/src/pipeline/console_target.cc" "CMakeFiles/ptk_core.dir/src/pipeline/console_target.cc.o" "gcc" "CMakeFiles/ptk_core.dir/src/pipeline/console_target.cc.o.d"
   "/Users/adityaajay/Desktop/ptk/src/pipeline/detection_decoder.cc" "CMakeFiles/ptk_core.dir/src/pipeline/detection_decoder.cc.o" "gcc" "CMakeFiles/ptk_core.dir/src/pipeline/detection_decoder.cc.o.d"

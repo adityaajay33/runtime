@@ -1,0 +1,21 @@
+input:
+  type: synthetic
+  width: 640
+  height: 480
+  channels: 3
+  max_frames: 10
+  frame_id: camera
+  source_id: synthetic
+
+model:
+  type: fake
+  path: fake
+  device: cpu
+
+detection:
+  confidence_threshold: 0.5
+  target_class_id: 15
+  target_class_name: cat
+
+pipeline:
+  max_frames: 10

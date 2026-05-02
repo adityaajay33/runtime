@@ -1,5 +1,5 @@
-CMakeFiles/ptk_fake_detection.dir/apps/ptk_fake_detection.cc.o: \
-  /Users/adityaajay/Desktop/ptk/apps/ptk_fake_detection.cc \
+CMakeFiles/ptk_core.dir/src/core/config.cc.o: \
+  /Users/adityaajay/Desktop/ptk/src/core/config.cc \
   /Users/adityaajay/Desktop/ptk/include/core/config.h \
   /Users/adityaajay/Desktop/ptk/include/models/model_engine.h \
   /Users/adityaajay/Desktop/ptk/include/core/tensor.h \
@@ -763,14 +763,16 @@ CMakeFiles/ptk_fake_detection.dir/apps/ptk_fake_detection.cc.o: \
   /Users/adityaajay/Desktop/ptk/include/pipeline/frame_input.h \
   /Users/adityaajay/Desktop/ptk/include/pipeline/perception_target.h \
   /Users/adityaajay/Desktop/ptk/include/pipeline/synthetic_frame_input.h \
-  /Users/adityaajay/Desktop/ptk/include/models/fake_model_engine.h \
-  /Users/adityaajay/Desktop/ptk/include/pipeline/console_target.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/iostream \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/istream \
+  /opt/homebrew/include/yaml-cpp/yaml.h \
+  /opt/homebrew/include/yaml-cpp/parser.h \
+  /opt/homebrew/include/yaml-cpp/dll.h \
+  /opt/homebrew/include/yaml-cpp/emitter.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/sstream \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__ostream/basic_ostream.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__ostream/put_character_sequence.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/bitset \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/is_char_like_type.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/istream \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/ostream \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/format \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/queue \
@@ -804,4 +806,37 @@ CMakeFiles/ptk_fake_detection.dir/apps/ptk_fake_detection.cc.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/stack \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__fwd/stack.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/print \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/unistd.h
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/unistd.h \
+  /opt/homebrew/include/yaml-cpp/binary.h \
+  /opt/homebrew/include/yaml-cpp/emitterdef.h \
+  /opt/homebrew/include/yaml-cpp/emittermanip.h \
+  /opt/homebrew/include/yaml-cpp/null.h \
+  /opt/homebrew/include/yaml-cpp/ostream_wrapper.h \
+  /opt/homebrew/include/yaml-cpp/fptostring.h \
+  /opt/homebrew/include/yaml-cpp/emitterstyle.h \
+  /opt/homebrew/include/yaml-cpp/stlemitter.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/list \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/set \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__tree \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/map \
+  /opt/homebrew/include/yaml-cpp/exceptions.h \
+  /opt/homebrew/include/yaml-cpp/mark.h \
+  /opt/homebrew/include/yaml-cpp/noexcept.h \
+  /opt/homebrew/include/yaml-cpp/traits.h \
+  /opt/homebrew/include/yaml-cpp/node/node.h \
+  /opt/homebrew/include/yaml-cpp/node/detail/iterator_fwd.h \
+  /opt/homebrew/include/yaml-cpp/node/ptr.h \
+  /opt/homebrew/include/yaml-cpp/node/type.h \
+  /opt/homebrew/include/yaml-cpp/node/impl.h \
+  /opt/homebrew/include/yaml-cpp/node/detail/memory.h \
+  /opt/homebrew/include/yaml-cpp/node/detail/node.h \
+  /opt/homebrew/include/yaml-cpp/node/detail/node_ref.h \
+  /opt/homebrew/include/yaml-cpp/node/detail/node_data.h \
+  /opt/homebrew/include/yaml-cpp/node/detail/node_iterator.h \
+  /opt/homebrew/include/yaml-cpp/node/iterator.h \
+  /opt/homebrew/include/yaml-cpp/node/detail/iterator.h \
+  /opt/homebrew/include/yaml-cpp/node/convert.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/valarray \
+  /opt/homebrew/include/yaml-cpp/node/detail/impl.h \
+  /opt/homebrew/include/yaml-cpp/node/parse.h \
+  /opt/homebrew/include/yaml-cpp/node/emit.h

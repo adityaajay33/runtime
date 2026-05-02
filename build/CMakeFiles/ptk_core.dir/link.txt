@@ -1,2 +1,2 @@
-/usr/bin/ar qc libptk_core.a CMakeFiles/ptk_core.dir/src/pipeline/synthetic_frame_input.cc.o CMakeFiles/ptk_core.dir/src/pipeline/console_target.cc.o CMakeFiles/ptk_core.dir/src/pipeline/detection_decoder.cc.o CMakeFiles/ptk_core.dir/src/pipeline/perception_pipeline.cc.o CMakeFiles/ptk_core.dir/src/models/fake_model_engine.cc.o
+/usr/bin/ar qc libptk_core.a CMakeFiles/ptk_core.dir/src/core/config.cc.o CMakeFiles/ptk_core.dir/src/pipeline/synthetic_frame_input.cc.o CMakeFiles/ptk_core.dir/src/pipeline/console_target.cc.o CMakeFiles/ptk_core.dir/src/pipeline/detection_decoder.cc.o CMakeFiles/ptk_core.dir/src/pipeline/perception_pipeline.cc.o CMakeFiles/ptk_core.dir/src/models/fake_model_engine.cc.o
 /usr/bin/ranlib libptk_core.a

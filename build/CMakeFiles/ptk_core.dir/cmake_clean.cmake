@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/ptk_core.dir/src/core/config.cc.o"
+  "CMakeFiles/ptk_core.dir/src/core/config.cc.o.d"
   "CMakeFiles/ptk_core.dir/src/models/fake_model_engine.cc.o"
   "CMakeFiles/ptk_core.dir/src/models/fake_model_engine.cc.o.d"
   "CMakeFiles/ptk_core.dir/src/pipeline/console_target.cc.o"
