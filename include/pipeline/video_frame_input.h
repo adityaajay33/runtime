@@ -4,36 +4,38 @@
 #include "core/tensor.h"
 #include "pipeline/frame_input.h"
 
+#include <opencv2/opencv.hpp>
+
 #include <cstdint>
 #include <string>
 
 namespace ptk
 {
 
-    struct SyntheticFrameInputConfig
+    struct VideoFrameInputConfig
     {
-        int width = 640;
-        int height = 480;
-        int channels = 3;
-        uint64_t max_frames = 300;
-
+        std::string path;
         std::string frame_id = "camera";
-        std::string source_id = "synthetic";
+        std::string source_id = "video";
+
+        uint64_t max_frames = 300;
     };
 
-    class SyntheticFrameInput : public FrameInput
+    class VideoFrameInput : public FrameInput
     {
     public:
-        explicit SyntheticFrameInput(SyntheticFrameInputConfig config);
+        explicit VideoFrameInput(VideoFrameInputConfig config);
 
         bool open() override;
         bool read_next(Frame &frame) override;
         void close() override;
 
     private:
-        void fill_frame_pattern();
+        bool copy_mat_to_tensor(const cv::Mat &image);
 
-        SyntheticFrameInputConfig config_;
+        VideoFrameInputConfig config_;
+        cv::VideoCapture capture_;
+
         uint64_t sequence_ = 0;
         bool opened_ = false;
 

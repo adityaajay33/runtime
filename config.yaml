@@ -1,21 +1,27 @@
 input:
-  type: synthetic
-  width: 640
-  height: 480
-  channels: 3
-  max_frames: 10
+  type: video
+  path: data/kitten.mp4
+  max_frames: 300
   frame_id: camera
-  source_id: synthetic
+  source_id: kitten_video
 
 model:
-  type: fake
-  path: fake
+  type: onnx
+  path: models/yolo26n.onnx
   device: cpu
 
+preprocess:
+  width: 640
+  height: 640
+  normalize: true
+
 detection:
-  confidence_threshold: 0.5
+  confidence_threshold: 0.35
+  iou_threshold: 0.45
   target_class_id: 15
   target_class_name: cat
 
-pipeline:
-  max_frames: 10
+target:
+  type: display
+  window_name: ptk cat detection
+  wait_key_ms: 1
